@@ -1,18 +1,49 @@
 const path = require('path');
 
 module.exports = {
-
-  entry: './src/index.js',
+  entry: './src/index.tsx',
+  
+  devtool: 'source-map',
+  mode: 'none',
 
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'index_bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist/')
+  },
+
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader'
+          }
+        ]
+      },
+      {
+        test:/\.js$/,
+        enforce: 'pre',
+        loader: 'source-map-loader'
+      }
+    ]
+  },
+
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
 
   devServer: {
-    contentBase: path.join(__dirname, 'src'),
-    index: 'index.html',
-    port: 8000
+    contentBase: path.join(__dirname, './'),
+    writeToDisk: true
   },
+  
+  watch: true
 
 };

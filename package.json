@@ -5,24 +5,25 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
-    "develop": "webpack-dev-server",
-    "start": "webpack --mode=development && webpack-dev-server --mode development"
+    "develop": "webpack",
+    "start": "webpack-dev-server --mode development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^10.12.21",
-    "@types/react": "^16.8.18",
-    "@types/react-dom": "^16.8.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.3.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-cli": "^3.2.3"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^3.2.0"
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.4.5",
+    "typescript": "^3.6.2",
+    "webpack-dev-server": "^3.8.0"
   }
 }
